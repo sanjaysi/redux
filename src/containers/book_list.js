@@ -8,9 +8,8 @@ class BookList extends Component {
                 return(
                     <li key={book.title} className="list-group-item">{book.title}</li>
                 );
-            });
-        )
-    }
+            })
+        )}
 
     render() {
         return (
@@ -22,8 +21,9 @@ class BookList extends Component {
 }
 
 function mapStateToProps(state) {
-    return(
-    {
-
-    })
+    return({
+        books: state.books
+    });
 }
+
+export default connect(mapStateToProps)(BookList);
